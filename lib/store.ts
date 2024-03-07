@@ -1,18 +1,10 @@
-import { configureStore } from '@reduxjs/toolkit'
-import projectReduce from '@/lib/features/project-prop/projectSlice'
-export const makeStore = () => {
-    return configureStore({ 
-        reducer: {
-            project: projectReduce
-        }
-    })
+import { configureStore } from "@reduxjs/toolkit";
+import customersClient from "./features/customersClient";
+export const store = configureStore({
+  reducer: {
+    customersClient,
+  },
+});
 
-}
-
-
-
-
-
-export type AppStore = ReturnType<typeof makeStore >
-export type RootState = ReturnType<AppStore['getState']>
-export type AppDispatch = AppStore['dispatch']
+export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof store.getState>;

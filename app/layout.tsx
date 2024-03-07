@@ -1,7 +1,14 @@
+import React from "react";
 import type { Metadata } from "next";
 import { Gabarito } from "next/font/google";
-import StoreProvider from "./StoreProvider";
+import { Toaster } from "@/components/ui/toaster";
+import { sessionClient } from "./lib/sessionClientUser";
+import ReduxProvider from "./ProviderRedux/ReduxProvider";
+
+import { Provider } from "react-redux";
 import "./globals.css";
+import { useEffect } from "react";
+const authtenticated = sessionClient();
 
 const inter = Gabarito({ subsets: ["latin"] });
 
@@ -13,16 +20,16 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  
   children: React.ReactNode;
 }>) {
   return (
-    <StoreProvider>
-      <html lang="en">
-        
-          <body className={inter.className} >{children}</body>
-      </html>
-    </StoreProvider>
-
+    <html lang="en">
+      <ReduxProvider>
+        <body className={inter.className}>
+          <Toaster />
+          {children}
+        </body>
+      </ReduxProvider>
+    </html>
   );
 }
