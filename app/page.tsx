@@ -5,24 +5,25 @@ import { Citrus } from "lucide-react";
 import { redirect } from "next/navigation";
 
 export default async function Page() {
-  // const session = await getServerSession(authOptions);
+  const session = await getServerSession(authOptions);
 
-  // if (session) {
-  //   return redirect("/dashboard");
-  // }
+  if (session) {
+    return redirect("/dashboard");
+  }
+
   return (
     <div className="max-w-[1440px] mx-auto">
       <header className="mx-auto">
         <nav className="flex flex-row mt-[45px] justify-around">
           <div className="">
-            <h1 className="text-[25px] font-bold text-blue-950 ml-[45px]">
-              LightPurchase
+            <h1 className="text-[25px] font-bold text-sky-950 ml-[45px]">
+              LemonInvoice
             </h1>
           </div>
           <div className="">
             <Link
               href="/auth"
-              className="text-[16px] bg-blue-950 px-[19px] font-extralight py-[8px] rounded-[6px] text-white hover:text-white/80 ml-[45px]"
+              className="text-[16px] bg-sky-950 px-[19px] font-extralight py-[8px] rounded-[6px] text-white hover:text-white/80 ml-[45px]"
             >
               Login
             </Link>
@@ -35,18 +36,35 @@ export default async function Page() {
             powered by Lemon Squezzy
             <Citrus className="ml-[11px]" />
           </span>
-          <h1 className="text-center font-black mt-[45px] text-blue-950 text-[45px]">
+          <h1 className="text-center font-black mt-[45px] text-sky-950 text-[45px]">
             Make invoices for your customers
           </h1>
-          <p className="text-center font-bold text-[18px] text-blue-950 opacity-[.25] ">
+          <p className="text-center font-bold text-[18px] text-sky-950 opacity-[.25] ">
             Create custom quick invoices from Lemon Squeezy in few clicks.
           </p>
           <Link
             href="/auth"
-            className="bg-blue-950 mt-[45px] text-white rounded-[6px] px-[65px] py-[11px] "
+            className="bg-sky-950 mt-[45px] text-white rounded-[6px] px-[65px] py-[11px] "
           >
             Try it out
           </Link>
+        </div>
+
+        <div className="flex items-center flex-col mt-[125px] ">
+          <h1 className="text-[20px] font-bold  text-sky-950 ">Demo</h1>
+          <p className="text-[18px] text-sky-950 opacity-[.65]">
+            Watch quick demo of LemonInvoice
+          </p>
+          <div className="mt-[65px]">
+            <video controls width="1688">
+              <source
+                src="./demo1.mp4"
+                width={620}
+                height={625}
+                type="video/mp4"
+              />
+            </video>
+          </div>
         </div>
       </section>
     </div>
