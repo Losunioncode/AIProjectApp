@@ -41,7 +41,7 @@ const Page = ({ params }: { params: { id: string } }) => {
     const getOrderListCustomer = async () => {
       try {
         const res = await fetch(
-          "http://localhost:3000/api/lemonSquezzyCustomerOrder",
+          `${window.location.origin}/api/lemonSquezzyCustomerOrder`,
           {
             method: "POST",
             headers: {

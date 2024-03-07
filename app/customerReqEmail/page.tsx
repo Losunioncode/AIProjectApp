@@ -24,7 +24,7 @@ const Page = () => {
 
   useEffect(() => {
     const getAuthUser = async () => {
-      const res = await fetch("http://localhost:3000/api/authenticated");
+      const res = await fetch(`${window.location.origin}/api/authenticated`);
       const data = await res.json();
 
       if (!data.auth) {
@@ -39,7 +39,7 @@ const Page = () => {
     try {
       setShowIsLoadedReq(true);
       const res = await fetch(
-        "http://localhost:3000/api/lemonSquezzeCustomers",
+        `${window.location.origin}/api/lemonSquezzeCustomers`,
         {
           method: "POST",
           headers: {
@@ -64,7 +64,7 @@ const Page = () => {
         }, 2600);
       }
       if (customerOrderId) {
-        const res = await fetch("http://localhost:3000/api/resend", {
+        const res = await fetch(`${window.location.origin}/api/resend`, {
           method: "POST",
           headers: {
             "Content-Type": "applciation/json",
@@ -72,7 +72,7 @@ const Page = () => {
           body: JSON.stringify({
             data: {
               customerEmail,
-              customerOrderLink: `http://localhost:3000/customerInvoices/${customerOrderId}`,
+              customerOrderLink: `${window.location.origin}/customerInvoices/${customerOrderId}`,
             },
           }),
         });
