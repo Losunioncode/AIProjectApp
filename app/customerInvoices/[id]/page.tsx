@@ -18,7 +18,7 @@ interface CustomerDetails {
   };
 }
 
-const page = ({ params }: { params: { id: string } }) => {
+const Page = ({ params }: { params: { id: string } }) => {
   const [customerOrderList, setCustomerOrderList] = useState<CustomerOrders[]>(
     []
   );
@@ -144,4 +144,4 @@ const page = ({ params }: { params: { id: string } }) => {
   );
 };
 
-export default page;
+export default Page;

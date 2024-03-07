@@ -84,8 +84,8 @@ const dashboard = async () => {
               2. Get an email from your customer
             </h4>
             <p className="text-[16px] text-sky-950">
-              Write a customer's email. And find all invoices for him. You can
-              do it
+              {` Write a customer's email. And find all invoices for him. You can
+              do it`}
               <Link
                 href={"/customerReqEmail"}
                 className="text-slate-700 ml-[3px] font-bold underline "
@@ -99,7 +99,7 @@ const dashboard = async () => {
               3. Send a Link{" "}
             </h4>
             <p className="text-[16px] text-sky-950">
-              Send a link of a list of customer's invoices. And check result!
+              {`Send a link of a list of customer's invoices. And check result!`}
             </p>
           </div>
         </div>

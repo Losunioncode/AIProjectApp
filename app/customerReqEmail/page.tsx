@@ -6,9 +6,10 @@ import { useToast } from "@/components/ui/use-toast";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const page = () => {
-  const router = useRouter();
+const Page = () => {
   const [customerBillEmail, setCustomerBillEmail] = useState("");
+  const router = useRouter();
+
   const { toast } = useToast();
   const [showIsLoadedReq, setShowIsLoadedReq] = useState<boolean>(false);
   const [showCustomerListError, setShowCustomerListError] =
@@ -98,4 +99,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

@@ -47,8 +47,8 @@ const Stack = ({
       </div>
 
       <p className="text-[16px] text-blue-950 mt-[16px] italic opacity-[.60] text-center ">
-        All of the data from your account will remain private and <br /> won't
-        be shared to anyone.
+        {`All of the data from your account will remain private and <br /> won't
+        be shared to anyone.`}
       </p>
 
       <button
