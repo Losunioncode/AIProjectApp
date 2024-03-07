@@ -5,11 +5,11 @@ import { Citrus } from "lucide-react";
 import { redirect } from "next/navigation";
 
 export default async function Page() {
-  const session = await getServerSession(authOptions);
+  // const session = await getServerSession(authOptions);
 
-  if (session) {
-    return redirect("/dashboard");
-  }
+  // if (session) {
+  //   return redirect("/dashboard");
+  // }
   return (
     <div className="max-w-[1440px] mx-auto">
       <header className="mx-auto">
