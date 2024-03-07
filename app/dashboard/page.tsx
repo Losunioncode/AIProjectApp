@@ -45,7 +45,6 @@ const dashboard = async () => {
   const clientApiKeyValue = await clientApiKey(clientEmail);
   const data = await customersClientRecieve(clientEmail);
   const customers = data[0].customers as [];
-  console.log(customers);
   return (
     <div className="mx-auto max-w-7xl py-10">
       <div className="flex items-center justify-between gap-y-2">
