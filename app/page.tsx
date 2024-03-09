@@ -2,6 +2,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "./utils/auth";
 import Link from "next/link";
 import { Citrus } from "lucide-react";
+import { Check } from "lucide-react";
 import { redirect } from "next/navigation";
 
 export default async function Page() {
@@ -30,9 +31,9 @@ export default async function Page() {
           </div>
         </nav>
       </header>
-      <section className="my-[10rem]">
-        <div className="max-w-full flex flex-col items-center justify-center ">
-          <span className="px-[16px] py-[10px] flex rounded-[6px]  text-white bg-blue-950">
+      <section className="my-[6rem]">
+        <div className="max-w-full flex flex-col items-center justify-start ">
+          <span className="px-[16px] py-[10px] flex rounded-[6px] text-white bg-sky-950">
             powered by Lemon Squezzy
             <Citrus className="ml-[11px]" />
           </span>
@@ -42,9 +43,29 @@ export default async function Page() {
           <p className="text-center font-bold text-[18px] text-sky-950 opacity-[.25] ">
             Create custom quick invoices from Lemon Squeezy in few clicks.
           </p>
+          <div className="mt-[27px]">
+            <div className="">
+              <span className="flex items-center gap-1 text-sky-950 font-bold text-[17px] ">
+                <Check />
+                Custom version of your bill
+              </span>
+              <span className="flex items-center gap-1 mt-[6px] text-sky-950 font-bold text-[17px]">
+                <Check />
+                Most recent invoices from your order
+              </span>
+              <span className="flex items-center gap-1 mt-[6px] text-sky-950 font-bold text-[17px]">
+                <Check />
+                Send by email
+              </span>
+              <span className="flex items-center gap-1 mt-[6px] text-sky-950 font-bold text-[17px]">
+                <Check />
+                All data is protected
+              </span>
+            </div>
+          </div>
           <Link
             href="/auth"
-            className="bg-sky-950 mt-[45px] text-white rounded-[6px] px-[65px] py-[11px] "
+            className="bg-sky-950 mt-[45px] text-white  rounded-[6px] px-[65px] hover:opacity-[.88] py-[11px] "
           >
             Try it out
           </Link>
